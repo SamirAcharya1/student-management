@@ -9,12 +9,19 @@ DB_PORT = "5432"
 def db_connection():
     try:
         conn = psycopg2.connect(dbname=DB_NAME, user=DB_USER, password=DB_PASSWORD, host=DB_HOST, port=DB_PORT)
-        print(conn)
         return conn
     except Exception as e:
         print("Error connecting to the database: ", e)
         return None
 
-if __name__ == "__main__":
+def insert_tables(name, age):
     conn = db_connection()
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO teacher (name, age) VALUES(%s, %s) RETURNING id", (name, age))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+if __name__ == "__main__":
+    insert_tables("Sayujya", 99)
 

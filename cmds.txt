@@ -3,3 +3,6 @@ python -m venv venv
 pip install psycopg2
 
 h1dHawHCXQiIC3KI
+
+
+postgresql://postgres.umkvljxuhwauyghgsshh:[YOUR-PASSWORD]@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres

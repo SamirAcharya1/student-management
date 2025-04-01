@@ -14,14 +14,15 @@ def db_connection():
         print("Error connecting to the database: ", e)
         return None
 
-def insert_tables(name, age):
+def delete_tables(id):
     conn = db_connection()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO teacher (name, age) VALUES(%s, %s) RETURNING id", (name, age))
+    cursor.execute("DELETE FROM teacher WHERE id = '%s'", (id,))
     conn.commit()
     cursor.close()
     conn.close()
 
 if __name__ == "__main__":
-    insert_tables("Sayujya", 99)
+    id = int(input("Enter the id: "))
+    delete_tables(id)
 

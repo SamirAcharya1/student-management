@@ -1,0 +1,37 @@
+INSERT INTO teacher (name, age) VALUES
+('Alice Johnson', 45),
+('Bob Smith', 38),
+('Charlie Brown', 50),
+('David Miller', 42),
+('Emily Clark', 36);
+
+
+INSERT INTO departments (department_name, teacher_id) VALUES
+('Mathematics', 1),
+('Physics', 2),
+('Chemistry', 3),
+('Computer Science', 4),
+('Biology', 5);
+
+INSERT INTO student (id, name, age, gender, email) VALUES
+(1, 'John Doe', 20, 'Male', 'johndoe@example.com'),
+(2, 'Jane Smith', 22, 'Female', 'janesmith@example.com'),
+(3, 'Michael Brown', 21, 'Male', 'michaelbrown@example.com'),
+(4, 'Emily Johnson', 23, 'Female', 'emilyjohnson@example.com'),
+(5, 'Daniel Wilson', 22, 'Male', 'danielwilson@example.com');
+
+INSERT INTO course (course_name, department_id, credits) VALUES
+('Calculus I', 1, 4),
+('Mechanics', 2, 3),
+('Organic Chemistry', 3, 4),
+('Data Structures', 4, 3),
+('Genetics', 5, 3);
+
+
+INSERT INTO enrollments (student_id, course_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+

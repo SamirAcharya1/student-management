@@ -14,15 +14,17 @@ def db_connection():
         print("Error connecting to the database: ", e)
         return None
 
-def delete_tables(id):
+def show_tables():
     conn = db_connection()
     cursor = conn.cursor()
-    cursor.execute("DELETE FROM teacher WHERE id = '%s'", (id,))
-    conn.commit()
-    cursor.close()
-    conn.close()
+    cursor.execute("SELECT * FROM teacher")
+
+    rows = cursor.fetchall()
+
+    for row in rows:
+        print(row)
+    
 
 if __name__ == "__main__":
-    id = int(input("Enter the id: "))
-    delete_tables(id)
+    show_tables()
 
